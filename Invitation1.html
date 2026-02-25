@@ -1,0 +1,23 @@
+<div style="text-align: center; font-family: sans-serif; padding: 50px;">
+    <h1>🌙 Undangan Bukber 2026</h1>
+    <p>Jangan biarkan bukber tahun ini jadi wacana abadi!</p>
+    
+    <input type="text" id="nama" placeholder="Masukkan Namamu" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;"><br><br>
+    
+    <button onclick="kirimWA()" style="background: #27ae60; color: white; padding: 15px 30px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">
+        GAS, IKUT! 🚀
+    </button>
+</div>
+
+<script>
+    function kirimWA() {
+        const nama = document.getElementById('nama').value;
+        if (nama === "") {
+            alert("Isi nama dulu dong!");
+            return;
+        }
+        const pesan = `Halo! Aku ${nama}, aku mau ikut bukber bareng kalian! Gak mau jadi wacana! 🍗`;
+        const noWA = "6282159507909"; // GANTI DENGAN NOMOR WA KAMU
+        window.open(`https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`, '_blank');
+    }
+</script>
