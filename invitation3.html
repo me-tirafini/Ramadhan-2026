@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Kesetiaan Bukber</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #121212; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; padding: 20px; text-align: center; }
+        .box { background: #1e1e1e; padding: 30px; border-radius: 20px; border: 2px solid #333; width: 100%; max-width: 350px; }
+        h1 { color: #f1c40f; font-size: 1.5rem; }
+        .btn { padding: 12px 25px; margin: 10px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-yes { background: #27ae60; color: white; }
+        .btn-no { background: #c0392b; color: white; position: relative; }
+        #detail { display: none; }
+        .wa-link { display: inline-block; margin-top: 20px; color: #27ae60; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="box" id="quiz">
+    <h1>Uji Kesetiaan! 🌙</h1>
+    <p>Apakah kamu mau bukber tahun ini cuma jadi wacana?</p>
+    <button class="btn btn-yes" onclick="showDetail()">TIDAK!</button>
+    <button class="btn btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">MAU</button>
+</div>
+
+<div class="box" id="detail">
+    <h1>ALHAMDULILLAH! ✨</h1>
+    <p>Ini baru namanya teman sejati. Catat jadwalnya ya:</p>
+    <div style="background: #333; padding: 10px; border-radius: 10px; margin: 15px 0;">
+        📅 <b>Minggu Depan</b><br>
+        📍 <b>Rumah Makan Terdekat</b><br>
+        ⏰ <b>17:45 WIB</b>
+    </div>
+    <p>Konfirmasi biar masuk list:</p>
+    <a href="https://wa.me/628123456789?text=Aku+gak+mau+wacana!+Gue+ikut+bukber!" class="wa-link">KLIK UNTUK KONFIRMASI 🚀</a>
+</div>
+
+<script>
+    function moveButton() {
+        const btn = document.getElementById('noBtn');
+        const x = Math.random() * (window.innerWidth - btn.clientWidth);
+        const y = Math.random() * (window.innerHeight - btn.clientHeight);
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+
+    function showDetail() {
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('detail').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
