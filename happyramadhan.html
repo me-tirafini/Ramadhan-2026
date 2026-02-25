@@ -3,98 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadhan Semangat! ✨</title>
+    <title>Ada Pesan Buat Kamu! ✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef); /* Gradasi background lembut */
+            background: #fff0f3;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
             overflow: hidden;
-            text-align: center;
-            color: #343a40;
-            padding: 20px;
-            box-sizing: border-box;
         }
-        .card {
+
+        /* Tombol Pembuka */
+        #opener {
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+        }
+        #opener:hover { transform: scale(1.1); }
+        .box-icon { font-size: 80px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); }
+        .click-text { color: #ff4d6d; font-weight: bold; margin-top: 10px; animation: bounce 2s infinite; }
+
+        /* Card Ucapan (Sembunyi dulu) */
+        #mainCard {
+            display: none;
             background: white;
             border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(255, 75, 110, 0.2);
             padding: 30px;
-            width: 100%;
+            width: 85%;
             max-width: 380px;
-            position: relative;
-            overflow: hidden;
-            animation: fadeIn 1s ease-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            text-align: center;
+            animation: zoomIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        h1 {
-            color: #28a745; /* Hijau yang lebih cerah */
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            font-weight: 400;
-        }
-        .quote {
-            font-style: italic;
-            color: #6c757d;
-            font-size: 0.95rem;
-            margin-top: 20px;
-            border-left: 3px solid #ffc107; /* Garis kuning untuk quote */
-            padding-left: 10px;
-        }
-        .sender {
-            margin-top: 30px;
-            font-weight: bold;
-            color: #28a745;
-        }
+        h1 { color: #28a745; font-size: 1.5rem; margin-bottom: 10px; }
+        p { color: #590d22; font-size: 1rem; line-height: 1.6; }
+        .quote { background: #fff5f5; border-radius: 15px; padding: 15px; margin: 20px 0; font-style: italic; color: #6c757d; font-size: 0.9rem; border-left: 4px solid #ffc107; }
+        
+        .footer { font-weight: bold; color: #ff4d6d; font-size: 0.9rem; }
 
-        /* Animasi Ketupat */
-        .ketupat-swing {
-            position: absolute;
-            top: -20px; /* Posisikan agak di atas card */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            font-size: 50px; /* Ukuran emoji ketupat */
-            animation: swing 3s ease-in-out infinite alternate; /* Ayunkan bolak-balik */
-            transform-origin: top center; /* Titik ayun dari atas */
-            z-index: 10;
-        }
-
-        @keyframes swing {
-            0% { transform: translateX(-50%) rotate(5deg); }
-            100% { transform: translateX(-50%) rotate(-5deg); }
-        }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes zoomIn { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <div class="ketupat-swing">
-            🌙
-        </div>
-        <h1>Ramadhan Kareem!</h1>
-        <p>Semoga Ramadhan kali ini membawa berkah, kekuatan, dan ketenangan hati untuk kamu. Jangan lupa bahagia dan selalu semangat ibadahnya!</p>
-        <div class="quote">
-            "Bulan puasa bukan hanya tentang menahan lapar dan dahaga, tapi juga tentang mengendalikan diri dan mendekatkan jiwa pada-Nya."
-        </div>
-        <p class="sender">Dari seseorang yang selalu mendoakanmu ❤️</p>
+    <div id="opener" onclick="bukaPesan()">
+        <div class="box-icon">🎁</div>
+        <div class="click-text">Ada kiriman spesial buat kamu!<br>Klik untuk buka ✨</div>
     </div>
+
+    <div id="mainCard">
+        <div style="font-size: 50px; margin-bottom: 10px;">🕌🌙</div>
+        <h1>Marhaban ya Ramadhan!</h1>
+        <p>Hai calon masa depanku, semangat ya puasanya! Semoga setiap detiknya jadi pahala dan bikin hati kamu makin adem. 💖</p>
+        
+        <div class="quote">
+            "Puasa itu nahan laper, tapi kalau liat senyum kamu, aku langsung kenyang deh! Hehe. Semangat ibadahnya sayang! 🥰"
+        </div>
+
+        <p class="footer">Dari seseorang yang selalu mendoakanmu di setiap sujudnya ✨</p>
+    </div>
+
+    <script>
+        function bukaPesan() {
+            // Sembunyikan tombol pembuka
+            document.getElementById('opener').style.display = 'none';
+            // Munculkan kartu ucapan
+            document.getElementById('mainCard').style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
