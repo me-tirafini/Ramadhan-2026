@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadhan Semangat! ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef); /* Gradasi background lembut */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+            color: #343a40;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 380px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #28a745; /* Hijau yang lebih cerah */
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        .quote {
+            font-style: italic;
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            border-left: 3px solid #ffc107; /* Garis kuning untuk quote */
+            padding-left: 10px;
+        }
+        .sender {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        /* Animasi Ketupat */
+        .ketupat-swing {
+            position: absolute;
+            top: -20px; /* Posisikan agak di atas card */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            font-size: 50px; /* Ukuran emoji ketupat */
+            animation: swing 3s ease-in-out infinite alternate; /* Ayunkan bolak-balik */
+            transform-origin: top center; /* Titik ayun dari atas */
+            z-index: 10;
+        }
+
+        @keyframes swing {
+            0% { transform: translateX(-50%) rotate(5deg); }
+            100% { transform: translateX(-50%) rotate(-5deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="ketupat-swing">
+            🌙
+        </div>
+        <h1>Ramadhan Kareem!</h1>
+        <p>Semoga Ramadhan kali ini membawa berkah, kekuatan, dan ketenangan hati untuk kamu. Jangan lupa bahagia dan selalu semangat ibadahnya!</p>
+        <div class="quote">
+            "Bulan puasa bukan hanya tentang menahan lapar dan dahaga, tapi juga tentang mengendalikan diri dan mendekatkan jiwa pada-Nya."
+        </div>
+        <p class="sender">Dari seseorang yang selalu mendoakanmu ❤️</p>
+    </div>
+
+</body>
+</html>
